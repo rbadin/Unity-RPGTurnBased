@@ -1,28 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Badin.Framework.Animations;
+using System;
 
 public class Temp : MonoBehaviour
 {
-	public float value;
-
+	public EasingControl ec;
 	void Start()
 	{
-		StartCoroutine("Tween");
+		ec = gameObject.AddComponent<EasingControl>();
+		ec.startValue = -5;
+		ec.endValue = 5;
+		ec.duration = 3;
+		ec.loopCount = -1; // inifinite looping
+		ec.loopType = EasingControl.LoopType.PingPong;
+		ec.equation = EasingEquations.EaseInOutQuad;
+		ec.UpdateEvent += OnUpdateEvent;
+		ec.Play();
 	}
 
-	IEnumerator Tween()
+	void OnUpdateEvent(object sender, EventArgs e)
 	{
-		float start = -5;
-		float end = 5;
-		float duration = 3;
-		float time = 0;
-		while (time < duration)
-		{
-			yield return new WaitForEndOfFrame();
-			time = Mathf.Clamp(time + Time.deltaTime, 0, duration);
-			value = EasingEquations.EaseInOutQuad(start, end, (time / duration));
-			transform.localPosition = new Vector3(value, 0, 0);
-		}
+		transform.localPosition = new Vector3(ec.CurrentValue, 0, 0);
 	}
 }

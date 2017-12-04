@@ -192,46 +192,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1361663812
-GameObject:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1361663814}
-  - component: {fileID: 1361663813}
-  m_Layer: 0
-  m_Name: _DocMeRoutiner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1361663813
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1361663812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce8883a2b9c2d04189a30637555ef9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1361663814
-Transform:
-  m_ObjectHideFlags: 2
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1361663812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1488367692
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ba3f39654a56f409e8a1a0539270c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
+  ec: {fileID: 0}
 --- !u!23 &1929065321
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -409,7 +369,8 @@ MonoBehaviour:
   component: {fileID: 1929065320}
   monitorInputFields:
   - field:
-    - value
+    - ec
+    - <CurrentValue>k__BackingField
     color: {r: 0.2509804, g: 1, b: 0.53333336, a: 1}
     fieldTypeName: System.Single
   mode: 2
